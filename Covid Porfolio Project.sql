@@ -50,32 +50,24 @@ ORDER BY InfectedPopulationPercentage DESC
 
 -- Countries with Highest Death Count per Population
 	
-SELECT location, MAX(CAST(total_deaths as INT)) AS Total_Death_Count
+SELECT location, MAX(CAST(total_deaths as INT)) AS Highest_Death_Count
 FROM PortfolioProject..yCovidDeaths
 --WHERE location like '%%'
 WHERE continent IS NOT NULL
 GROUP BY location
-ORDER BY Total_Death_Count DESC
-
-SELECT location, MAX(CAST(total_deaths as INT)) AS Total_Death_Count
-FROM PortfolioProject..yCovidDeaths
---WHERE location like '%%'
-WHERE continent IS NULL
-GROUP BY location
-ORDER BY Total_Death_Count DESC
-
+ORDER BY Highest_Death_Count DESC
 
 	
 -- BREAKING THINGS DOWN BY CONTINENT
 
 -- Showing contintents with the highest death count per population
 	
-SELECT continent, MAX(CAST(total_deaths as INT)) AS Total_Death_Count
+SELECT continent, MAX(CAST(total_deaths as INT)) AS Highest_Death_Count
 FROM PortfolioProject..yCovidDeaths
 --WHERE location like '%%'
 WHERE continent IS NOT NULL
 GROUP BY continent
-ORDER BY Total_Death_Count DESC
+ORDER BY Highest_Death_Count DESC
 
 -- Global numbers
 	
